@@ -105,7 +105,7 @@ document.querySelectorAll('.filter-button').forEach(button => {
   });
 });
 
-const viewAllGalleryBtn = document.querySelector('.view-all-gallery');
+const viewAllGalleryBtn = document.querySelector('button.view-all-gallery');
 if (viewAllGalleryBtn) {
   viewAllGalleryBtn.addEventListener('click', () => {
     setGalleryFilter('all');
@@ -188,7 +188,7 @@ const branchData = [
     hours: '6:00 PM – 8:30 PM',
     facilities: 'Sainik & Navodaya Entrance Coaching & Academic Prep',
     map: 'Near Lenskart, Lashkar Singaram, Naim Nagar',
-    directions: 'https://maps.app.goo.gl/YpjZ6mbHEwefvYYW9',
+    directions: 'https://maps.app.goo.gl/a8Kw5Pf4PTekgMdQ9',
     mapQuery: 'Lenskart, Nayeem Nagar, Lashkar Singaram, Hanamkonda, Telangana 506009'
   }
 ];
