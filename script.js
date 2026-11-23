@@ -61,7 +61,21 @@ function enquireForCourse(courseId) {
 }
 
 renderCourses(document.querySelector('#trending-courses'), courseCatalogue.filter(course => trendingCourseIds.includes(course.id)));
-renderCourses(document.querySelector('#all-courses'), courseCatalogue);
+const allCoursesGrid = document.querySelector('#all-courses');
+const courseSearch = document.querySelector('#course-search');
+let activeCourseCategory = 'all';
+function updateCourseResults() {
+  const term = courseSearch?.value.trim().toLocaleLowerCase() || '';
+  const results = courseCatalogue.filter(course =>
+    (activeCourseCategory === 'all' || course.category === activeCourseCategory) &&
+    `${course.title} ${course.description} ${course.exams.join(' ')} ${course.tags.join(' ')}`.toLocaleLowerCase().includes(term)
+  );
+  renderCourses(allCoursesGrid, results);
+  const empty = document.querySelector('#course-empty');
+  if (empty) empty.hidden = results.length > 0;
+}
+updateCourseResults();
+courseSearch?.addEventListener('input', updateCourseResults);
 populateCourseSelect();
 
 document.addEventListener('click', event => {
@@ -73,15 +87,18 @@ document.addEventListener('click', event => {
 
 document.querySelectorAll('.course-filter').forEach(button => button.addEventListener('click', () => {
   document.querySelectorAll('.course-filter').forEach(item => item.classList.toggle('active', item === button));
-  const category = button.dataset.courseFilter;
-  renderCourses(document.querySelector('#all-courses'), category === 'all' ? courseCatalogue : courseCatalogue.filter(course => course.category === category));
+  activeCourseCategory = button.dataset.courseFilter;
+  updateCourseResults();
 }));
 
 const selectedCourse = new URLSearchParams(window.location.search).get('course');
 if (selectedCourse && courseSelect && courseCatalogue.some(course => course.id === selectedCourse)) courseSelect.value = selectedCourse;
 
 const navLinks = [...document.querySelectorAll('.nav-link')];
-const sections = navLinks.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+const sections = navLinks.map(link => {
+  const href = link.getAttribute('href');
+  return href?.startsWith('#') && href.length > 1 ? document.querySelector(href) : null;
+}).filter(Boolean);
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver(entries => entries.forEach(entry => {
     if (entry.isIntersecting) navLinks.forEach(link => link.classList.toggle('active', link.hash === `#${entry.target.id}`));
@@ -105,6 +122,14 @@ document.querySelectorAll('.filter-button').forEach(button => {
   });
 });
 
+const galleryPreview = document.querySelector('[data-gallery-preview]');
+const fullGallery = document.querySelector('.gallery-full .gallery-grid');
+if (Array.isArray(window.sparkGallery)) {
+  const photos = [...window.sparkGallery].sort((a, b) => b.date.localeCompare(a.date));
+  const galleryCard = photo => `<button class="gallery-item" data-category="${photo.category}" data-image="${photo.src}" data-caption="${photo.caption}"><img src="${photo.src}" alt="${photo.alt}" loading="lazy"></button>`;
+  if (galleryPreview) galleryPreview.innerHTML = photos.slice(0, Number(galleryPreview.dataset.galleryPreview) || 6).map(galleryCard).join('');
+  if (fullGallery) fullGallery.innerHTML = photos.map(galleryCard).join('');
+}
 const viewAllGalleryBtn = document.querySelector('button.view-all-gallery');
 if (viewAllGalleryBtn) {
   viewAllGalleryBtn.addEventListener('click', () => {
@@ -226,15 +251,25 @@ document.querySelectorAll('.branch-tab').forEach(tab => tab.addEventListener('cl
 const form = document.querySelector('#enquiry-form');
 const status = document.querySelector('#form-status');
 const phoneField = form?.elements.phone;
+const configuredEndpoint = document.querySelector('meta[name="enquiry-endpoint"]')?.content?.trim();
+if (configuredEndpoint && form) {
+  form.querySelector('.submit-button span').textContent = 'Request a call back';
+  document.querySelector('.contact-content>p').textContent = 'Have questions about learning at Spark? Share your details and our team will get in touch.';
+  form.querySelector('.form-privacy').textContent = 'Your details are only for responding to your enquiry.';
+}
 const mobilePattern = /^(?:(?:\+91|91)[\s-]?)?[6-9]\d{9}$/;
 phoneField?.addEventListener('input', () => { phoneField.setCustomValidity(''); });
 form?.addEventListener('submit', async event => {
   event.preventDefault(); status.textContent = ''; status.classList.remove('success');
   phoneField.setCustomValidity(mobilePattern.test(phoneField.value.trim()) ? '' : 'Enter a valid 10-digit Indian mobile number.');
   if (!form.reportValidity()) return;
-  const endpoint = document.querySelector('meta[name="enquiry-endpoint"]')?.content?.trim();
+  const endpoint = configuredEndpoint;
   if (!endpoint) {
-    status.textContent = 'The enquiry form is ready, but the academy submission endpoint has not been configured. No details were sent.';
+    const selectedTitle = courseCatalogue.find(course => course.id === form.elements.course.value)?.title || form.elements.course.value;
+    const selectedBranch = form.elements.branch.selectedOptions[0]?.textContent || form.elements.branch.value;
+    const message = `Hello Spark Academy, please call me back.\nName: ${form.elements.name.value.trim()}\nPhone: ${phoneField.value.trim()}\nCourse: ${selectedTitle}\nBranch: ${selectedBranch}`;
+    status.textContent = 'Opening WhatsApp. Please review and send the prepared message to complete your enquiry.';
+    window.location.href = `https://wa.me/919705014444?text=${encodeURIComponent(message)}`;
     return;
   }
   const button = form.querySelector('button[type="submit"]');
