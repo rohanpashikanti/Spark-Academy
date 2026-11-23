@@ -207,6 +207,11 @@ body{font-size:16px;line-height:1.65;color:var(--ink)}
 @media(max-width:760px){.gallery-page-intro{padding:36px 0 4px}.gallery-page-intro h1{font-size:38px}.gallery-page-intro p{font-size:14px}.gallery-page .gallery-full{padding-top:28px}.contact-inner{grid-template-columns:1fr;gap:28px;justify-content:stretch}.contact-visual{max-width:460px;height:clamp(300px,82vw,410px);margin-inline:auto}.contact-content{max-width:560px;margin-inline:auto}.contact-content h2,.contact-content>p{text-align:center}.contact-content form{width:100%}.contact-quote{left:8px;bottom:12px}.contact-quote p{text-align:left}.contact-section{padding-block:52px 60px}}
 @media(max-width:420px){.contact-inner{gap:22px}.contact-visual{height:280px}.contact-content h2{font-size:34px}.contact-content form{padding:16px!important}.gallery-page-intro{padding-top:28px}}
 
+/* Keep navigation available on every page while visitors scroll. */
+.site-header{position:fixed;inset:0 0 auto;z-index:100;width:100%}
+body{padding-top:82px}
+@media(max-width:760px){body{padding-top:68px}}
+
 /* Wider page containers with restrained outer gutters. */
 @media(min-width:761px){
   .section,.section-shell{width:min(1340px,calc(100% - 64px))}
