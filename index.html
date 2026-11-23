@@ -16,7 +16,7 @@
     <link rel="icon" href="assets/favicon.png" type="image/png" />
     <link rel="stylesheet" href="styles.css" />
     <script type="application/ld+json">
-      {"@context":"https://schema.org","@type":"EducationalOrganization","name":"Spark Academy","logo":"Spark_Academy_Logo_Kit/transparent.png","description":"An academy focused on student learning and academic growth."}
+      {"@context":"https://schema.org","@graph":[{"@type":"EducationalOrganization","name":"Spark Academy","logo":"Spark_Academy_Logo_Kit/transparent.png","telephone":"+91-9705014444","address":{"@type":"PostalAddress","streetAddress":"2nd Floor, Mayuri Mall, Opposite Vagdevi Degree College, Kishanpura","addressLocality":"Hanamkonda","addressRegion":"Telangana","postalCode":"506001","addressCountry":"IN"},"hasMap":"https://maps.app.goo.gl/TscFoT3Ga7LkWBci8"},{"@type":"EducationalOrganization","name":"Spark Sainik & Navodaya Academy","telephone":"+91-9705014444","address":{"@type":"PostalAddress","streetAddress":"Near Lenskart, Lashkar Singaram, Naim Nagar","addressLocality":"Hanamkonda","addressRegion":"Telangana","postalCode":"506009","addressCountry":"IN"},"hasMap":"https://maps.app.goo.gl/a8Kw5Pf4PTekgMdQ9"}]}
     </script>
   </head>
   <body>
@@ -27,7 +27,7 @@
         <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
         <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
           <a href="#home" class="nav-link active">Home</a><a href="#courses" class="nav-link">Courses</a><a href="#achievements" class="nav-link">Achievements</a><a href="#gallery" class="nav-link">Gallery</a><a href="#why-spark" class="nav-link">Why Spark</a><a href="#branches" class="nav-link">Branches</a>
-          <a href="#contact" class="nav-link">Contact us</a><a href="#" class="nav-signin">Sign in</a>
+          <a href="#contact" class="nav-link">Contact us</a><a href="https://tutorly-roan.vercel.app/signin" class="nav-signin">Sign in</a>
         </nav>
       </div>
     </header>
@@ -40,7 +40,7 @@
           <p class="hero-lede">Thoughtful teaching and steady support help students build strong foundations and take their next step with confidence.</p>
           <div class="hero-actions"><a class="button button-primary" href="courses.html">Explore courses</a><a class="button button-secondary" href="#contact">Talk to our team</a></div>
           <div class="hero-social-proof">
-            <div class="rating-badge" aria-label="Google reviews: 3.9 out of 5">
+            <a class="rating-badge" href="https://maps.app.goo.gl/TscFoT3Ga7LkWBci8" target="_blank" rel="noopener noreferrer" aria-label="View Spark Academy on Google Maps; displayed rating 3.9 out of 5">
               <svg class="rating-icon" viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
                 <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.65v3.03h3.88c2.27-2.09 3.665-5.17 3.665-9.12z"/>
                 <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.92l-3.88-3.03c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.13C3.26 21.36 7.33 24 12 24z"/>
@@ -54,21 +54,21 @@
                 </div>
                 <small>Google Verified Reviews</small>
               </div>
-            </div>
+            </a>
 
-            <div class="rating-badge" aria-label="Justdial rating: 4.1 out of 5">
+            <a class="rating-badge" href="https://www.justdial.com/Warangal/Spark-Arithmetic-Reasoning-Academy-Opposite-Vaagdevi-Degree-College-Hanamkonda/9999PX870-X870-140327175326-P2W6_BZDET/reviews" target="_blank" rel="noopener noreferrer" aria-label="View Spark Academy reviews on Justdial; displayed rating 4.0 out of 5">
               <span class="rating-icon jd-badge" aria-hidden="true">
                 <span class="jd-text">jd</span>
               </span>
               <div class="rating-details">
                 <div class="rating-score-row">
-                  <strong>4.1</strong><span class="rating-scale">/5</span>
+                  <strong>4.0</strong><span class="rating-scale">/5</span>
                   <span class="rating-star">★</span>
                 </div>
                 <small>Justdial Warangal Rating</small>
               </div>
-            </div>
-            <div class="legacy-badge" aria-label="20 plus years legacy mentoring Warangal students"><span class="legacy-icon" aria-hidden="true">🏅</span><div><strong>20+ Years Legacy</strong><small>Mentoring Warangal Students</small></div></div>
+            </a>
+            <div class="legacy-badge" aria-label="Established 2002, more than 20 years mentoring Warangal students"><span class="legacy-icon" aria-hidden="true">🏅</span><div><strong>20+ Years Legacy</strong><small>Est. 2002 · Mentoring Warangal Students</small></div></div>
           </div>
         </div>
         <div class="hero-visual"><img class="hero-photo" src="assets/home-classroom.png" alt="Spark Academy teacher guiding students in a classroom" fetchpriority="high" /></div>
@@ -80,27 +80,17 @@
       </section>
 
       <section class="achievement-section" id="achievements" aria-labelledby="achievements-title">
-        <div class="section"><div class="achievement-title"><h2 id="achievements-title">Our achievers</h2><p>Celebrating the effort behind every milestone.</p></div>
-          <div class="achiever-grid">
-            <article class="achiever-card"><span class="profile-placeholder">SA</span><strong>Student profile</strong><span class="result-placeholder">Result pending</span><small>School section</small><em>Sample profile</em></article>
-            <article class="achiever-card"><span class="profile-placeholder">SA</span><strong>Student profile</strong><span class="result-placeholder">Result pending</span><small>School section</small><em>Sample profile</em></article>
-            <article class="achiever-card"><span class="profile-placeholder">SA</span><strong>Student profile</strong><span class="result-placeholder">Result pending</span><small>School section</small><em>Sample profile</em></article>
-            <article class="achiever-card"><span class="profile-placeholder">SA</span><strong>Student profile</strong><span class="result-placeholder">Result pending</span><small>Science section</small><em>Sample profile</em></article>
-            <article class="achiever-card"><span class="profile-placeholder">SA</span><strong>Student profile</strong><span class="result-placeholder">Result pending</span><small>Science section</small><em>Sample profile</em></article>
-            <article class="achiever-card"><span class="profile-placeholder">SA</span><strong>Student profile</strong><span class="result-placeholder">Result pending</span><small>Commerce section</small><em>Sample profile</em></article>
-            <article class="achiever-card"><span class="profile-placeholder">SA</span><strong>Student profile</strong><span class="result-placeholder">Result pending</span><small>School section</small><em>Sample profile</em></article>
-            <article class="achiever-card"><span class="profile-placeholder">SA</span><strong>Student profile</strong><span class="result-placeholder">Result pending</span><small>Science section</small><em>Sample profile</em></article>
-            <article class="achiever-card"><span class="profile-placeholder">SA</span><strong>Student profile</strong><span class="result-placeholder">Result pending</span><small>Commerce section</small><em>Sample profile</em></article>
-            <article class="achiever-card"><span class="profile-placeholder">SA</span><strong>Student profile</strong><span class="result-placeholder">Result pending</span><small>School section</small><em>Sample profile</em></article>
-            <article class="achiever-card"><span class="profile-placeholder">SA</span><strong>Student profile</strong><span class="result-placeholder">Result pending</span><small>Science section</small><em>Sample profile</em></article>
-            <article class="achiever-card"><span class="profile-placeholder">SA</span><strong>Student profile</strong><span class="result-placeholder">Result pending</span><small>Commerce section</small><em>Sample profile</em></article>
-          </div><p class="data-note"><span>i</span> Profile photos, names and verified examination results are placeholders. Replace them with approved student information.</p>
+        <div class="section"><div class="achievement-title"><h2 id="achievements-title">Student journeys</h2><p>Real moments from learning and life at Spark.</p></div>
+          <div class="journey-grid">
+            <article class="journey-card"><img src="assets/home-classroom.png" alt="Students taking part in a Spark Academy classroom lesson" loading="lazy"><div><h3>Learning together</h3><p>Questions, practice and progress in the classroom.</p></div></article>
+            <article class="journey-card"><img src="assets/Gallery/SA/3.jpg" alt="A moment from Spark Academy" loading="lazy"><div><h3>Life at Spark Academy</h3><p>See more moments from our academy.</p></div></article>
+          </div><a class="journey-link" href="gallery.html">Explore the gallery</a>
         </div>
       </section>
 
       <section class="section gallery-section" id="gallery" aria-label="Spark Academy gallery">
         <div class="gallery-toolbar"><div class="gallery-filters" role="group" aria-label="Filter gallery"><button class="filter-button active" data-filter="all">All</button><button class="filter-button" data-filter="spark-academy">SPARK ACADEMY</button><button class="filter-button" data-filter="sainik-navodaya">SPARK SAINIK &amp; NAVODAYA ACADEMY</button></div><a class="view-all-gallery" href="gallery.html" aria-label="View all gallery images">View all</a></div>
-        <div class="gallery-grid gallery-branch-grid">
+        <div class="gallery-grid gallery-branch-grid" data-gallery-preview="6">
           <button class="gallery-item" data-category="spark-academy" data-image="assets/Gallery/SA/3.jpg" data-caption="Spark Academy"><img src="assets/Gallery/SA/3.jpg" alt="Spark Academy gallery image 3" loading="lazy" /></button>
           <button class="gallery-item" data-category="spark-academy" data-image="assets/Gallery/SA/4.avif" data-caption="Spark Academy"><img src="assets/Gallery/SA/4.avif" alt="Spark Academy gallery image 4" loading="lazy" /></button>
           <button class="gallery-item" data-category="spark-academy" data-image="assets/Gallery/SA/5.avif" data-caption="Spark Academy"><img src="assets/Gallery/SA/5.avif" alt="Spark Academy gallery image 5" loading="lazy" /></button>
@@ -120,12 +110,12 @@
           <div class="branch-details"><div class="branch-tabs" role="tablist" aria-label="Choose a branch"><button class="branch-tab active" id="branch-tab-1" role="tab" aria-selected="true" aria-controls="branch-panel" data-branch="0"><span>01</span> SPARK ACADEMY</button><button class="branch-tab" id="branch-tab-2" role="tab" aria-selected="false" aria-controls="branch-panel" data-branch="1"><span>02</span> SPARK SAINIK &amp; NAVODAYA ACADEMY</button></div><div class="branch-panel" id="branch-panel" role="tabpanel" aria-labelledby="branch-tab-1"><span class="branch-label">Selected location</span><h3 id="branch-name">SPARK ACADEMY</h3><p class="branch-address" id="branch-address">2nd Floor, Mayuri Mall, Opposite Vagdevi Degree College, Kishanpura, Hanamkonda, Telangana 506001</p><div class="branch-meta"><div><div><small>Phone</small><strong id="branch-phone">09705014444</strong></div></div><div><div><small>Hours</small><strong id="branch-hours">6:00 PM – 8:30 PM</strong></div></div><div><div><small>Facilities</small><strong id="branch-facilities">Classroom Coaching, Entrance Exam Preparation &amp; Guidance</strong></div></div></div><div class="branch-actions"><a class="button button-primary" id="directions-link" href="https://maps.app.goo.gl/TscFoT3Ga7LkWBci8" target="_blank" rel="noopener noreferrer">Get directions</a><a class="text-link" id="branch-call-link" href="tel:+919705014444">Call this branch</a></div><p class="placeholder-note">Hours and contact details are shown as supplied by Spark Academy.</p></div></div>
         </div></div></section>
 
-      <section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="section contact-inner"><div class="contact-visual"><img src="assets/contact-students.jpg?v=2" alt="Two female students and one male student wearing Spark Academy navy uniforms with orange trim and chest logos" loading="lazy" /><div class="contact-quote"><p>Your next chapter<br />starts with a question.</p></div></div><div class="contact-content"><h2 id="contact-title">Let’s help you<br /><em>achieve more.</em></h2><p>Have questions about learning at Spark? Share your details and we’ll be in touch once our enquiry service is connected.</p><form id="enquiry-form" novalidate>
+      <section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="section contact-inner"><div class="contact-visual"><img src="assets/contact-students.jpg?v=2" alt="Two female students and one male student wearing Spark Academy navy uniforms with orange trim and chest logos" loading="lazy" /><div class="contact-quote"><p>Your next chapter<br />starts with a question.</p></div></div><div class="contact-content"><h2 id="contact-title">Let’s help you<br /><em>achieve more.</em></h2><p>Have questions about learning at Spark? Share your details, then review and send your enquiry through WhatsApp.</p><form id="enquiry-form" novalidate>
           <label class="field"><span>Full name</span><input type="text" name="name" placeholder="Your full name" autocomplete="name" required minlength="2" /></label>
           <label class="field"><span>Phone number</span><input type="tel" name="phone" placeholder="10-digit Indian mobile number" autocomplete="tel" inputmode="tel" required /></label>
           <label class="field"><span>Preferred course</span><select name="course" id="preferred-course" required><option value="">Select a course</option></select></label>
           <label class="field"><span>Preferred branch</span><select name="branch" required><option value="">Select a branch</option><option value="spark-academy">SPARK ACADEMY · Mayuri Mall</option><option value="sainik-navodaya">SPARK SAINIK &amp; NAVODAYA ACADEMY · Naim Nagar</option></select></label>
-          <button class="button button-primary submit-button" type="submit"><span>Request a call back</span></button><p class="form-status" id="form-status" role="status" aria-live="polite"></p><small class="form-privacy">Your details are only for responding to your enquiry.</small>
+          <button class="button button-primary submit-button" type="submit"><span>Continue to WhatsApp</span></button><p class="form-status" id="form-status" role="status" aria-live="polite"></p><small class="form-privacy">WhatsApp opens a prepared message; review it and press Send to contact the academy.</small>
         </form></div></div></section>
     </main>
 
@@ -133,6 +123,7 @@
 
     <a class="floating-enquire" href="#contact" aria-label="Enquire with Spark Academy">Enquire now</a>
     <div class="lightbox" id="lightbox" aria-hidden="true"><button class="lightbox-close" aria-label="Close image viewer">×</button><button class="lightbox-prev" aria-label="Previous image">‹</button><figure><img src="" alt="" /><figcaption></figcaption></figure><button class="lightbox-next" aria-label="Next image">›</button></div>
+    <script src="gallery-data.js"></script>
     <script src="course-data.js"></script>
     <script src="script.js?v=5" defer></script>
   </body>
